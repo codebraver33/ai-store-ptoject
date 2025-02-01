@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #ADD8E6; /* Light blue text */
+    background-color: #000000; /* Black background */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: #000000; /* Black background */
+    color: #ADD8E6; /* Light blue text */
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-links a {
+    color: #ADD8E6; /* Light blue text */
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff; /* White text on hover */
+}
+
+.search-bar {
+    display: none;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    background-color: #333333; /* Dark grey background */
+    color: #ADD8E6; /* Light blue text */
+}
+
+.search-bar button {
+    background-color: #ADD8E6; /* Light blue background */
+    color: #000000; /* Black text */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text */
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #ADD8E6; /* Light blue text */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.hero {
+    background-color: #000000; /* Black background */
+    color: #ADD8E6; /* Light blue text */
+    text-align: center;
+    padding: 8rem 0; /* Increase padding */
+    background-image: url('back.jpg'); /* Set the background image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 4rem; /* Increase font size */
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.hero p {
+    font-size: 1.5rem; /* Increase font size */
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards 0.2s;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ADD8E6; /* Light blue background */
+    color: #000000; /* Black text */
+    text-decoration: none;
+    padding: 1rem 2rem; /* Increase padding */
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards 0.4s;
+}
+
+.cta-button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.featured-products, .categories, .new-arrivals, .about, .contact {
+    padding: 4rem 0;
+}
+
+.featured-products, .new-arrivals {
+    background-color: #000000; /* Black background */
+    color: #ADD8E6; /* Light blue text */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product-grid, .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card, .category-card {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover, .category-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image, .category-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info, .category-name {
+    padding: 1rem;
+}
+
+.product-name, .category-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    color: #ADD8E6; /* Light blue text */
+}
+
+.add-to-cart {
+    display: block;
+    width: 100%;
+    background-color: #ADD8E6; /* Light blue background */
+    color: #000000; /* Black text */
+    border: none;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text */
+}
+
+.category-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-name {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.product-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.product-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.product-slider .product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    margin-right: 1rem;
+    scroll-snap-align: start;
+}
+
+.about p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact form {
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact button {
+    background-color: #ADD8E6; /* Light blue background */
+    color: #000000; /* Black text */
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text */
+}
+
+.footer {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #000000; /* Black text */
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.footer-info p {
+    margin-bottom: 0.5rem;
+}
+
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ADD8E6; /* Light blue background */
+    color: #000000; /* Black text */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000; /* Ensure the icon is above other elements */
+}
+
+.chat-icon i {
+    font-size: 24px; /* Font Awesome icon size */
+}
+
+.chat-window {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #ADD8E6;
+    color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chat-item-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-item-details {
+    flex: 1;
+}
+
+.chat-item-name {
+    font-size: 14px;
+    color: #000000;
+}
+
+.chat-item-price {
+    font-size: 12px;
+    color: #666666;
+}
+
+.chat-item-delete {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ff0000;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.chat-buy {
+    background-color: #ADD8E6;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.chat-buy:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-links, .search-bar {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
